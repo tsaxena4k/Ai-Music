@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Howl, Howler } from "howler";
 import newSound from "./assets/audio/sample.mp3";
+import WebcamComponent from "./Component/WebcamComponent";
 
 const playlist = {
   happy: [newSound],
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <div>
+      <WebcamComponent/>
       <h1>Music Mood Player</h1>
       <form>
         <label>
