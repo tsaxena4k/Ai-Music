@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Howl, Howler } from "howler";
 import newSound from "./assets/audio/sample.mp3";
 import WebcamComponent from "./Component/WebcamComponent";
+import Navbar from "./Component/Navbar";
+import Body from "./Component/Body";
+import WaveFooter from "./Component/WaveFooter";
 
 const playlist = {
   happy: [newSound],
@@ -26,14 +29,14 @@ function App() {
     },
   });
 
-  useEffect(() => {
-    sound.load();
-    sound.play();
+  // useEffect(() => {
+  //   sound.load();
+  //   sound.play();
 
-    return () => {
-      sound.stop();
-    };
-  }, [songIndex]);
+  //   return () => {
+  //     sound.stop();
+  //   };
+  // }, [songIndex]);
 
   const handleMoodChange = (event) => {
     setMood(event.target.value);
@@ -56,28 +59,37 @@ function App() {
     setSongIndex((prevIndex) => prevIndex - 1);
   };
 
-  return (
-    <div>
-      <WebcamComponent/>
-      <h1>Music Mood Player</h1>
-      <form>
-        <label>
-          Select a mood:
-          <select value={mood} onChange={handleMoodChange}>
-            <option value="happy">Happy</option>
-            <option value="sad">Sad</option>
-            <option value="angry">Angry</option>
-          </select>
-        </label>
-      </form>
-      <div>
-        <button onClick={handlePrev}>Prev</button>
-        <button onClick={handlePause}>Pause</button>
-        <button onClick={handlePlay}>Play</button>
-        <button onClick={handleNext}>Next</button>
-      </div>
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <WebcamComponent/>
+  //     <h1>Music Mood Player</h1>
+  //     <form>
+  //       <label>
+  //         Select a mood:
+  //         <select value={mood} onChange={handleMoodChange}>
+  //           <option value="happy">Happy</option>
+  //           <option value="sad">Sad</option>
+  //           <option value="angry">Angry</option>
+  //         </select>
+  //       </label>
+  //     </form>
+  //     <div>
+  //       <button onClick={handlePrev}>Prev</button>
+  //       <button onClick={handlePause}>Pause</button>
+  //       <button onClick={handlePlay}>Play</button>
+  //       <button onClick={handleNext}>Next</button>
+  //     </div>
+  //   </div>
+  // );
+
+  return (<>
+
+    <Navbar />
+    <Body />
+    <WaveFooter/>
+
+  </>)
+
 }
 
 export default App;
