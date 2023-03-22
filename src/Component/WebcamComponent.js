@@ -1,6 +1,6 @@
 import React from 'react';
 import Webcam from 'react-webcam';
-import { useState,useRef } from 'react';
+import { useState, useRef } from 'react';
 import '../assets/styles/WebcamComp.css'
 
 const WebcamComponent = () => {
@@ -24,7 +24,11 @@ const WebcamComponent = () => {
     return (
         <div className="wb-comp">
             <div className="left">
-                <Webcam ref={webcamref} className="webcam" />
+                <div className='wb-container'>
+                    <Webcam ref={webcamref} className="webcam" />
+                    <span>Disclaimer: We are using your picture to analyse your mood</span>
+                </div>
+
             </div>
             <div className="right">
                 <div className="heading">
@@ -32,9 +36,9 @@ const WebcamComponent = () => {
                 </div>
                 <button onClick={handleCapture} className="emobutton">Lets see</button>
             </div>
-            
+
             {/* <img src={ssImage} ref={ssimageref} alt="" srcset="" /> */}
-            
+
         </div>
     );
 }
