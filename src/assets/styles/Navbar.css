@@ -1,0 +1,23 @@
+.navbar{
+    height: 60px;
+    background-color: rgb(16, 16, 16);
+    display: flex;
+    color: snow;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.navbar .logo{
+    width: 10%;
+}
+
+.navbar .navItems{
+    list-style: none;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    padding: 0 25px;
+
+}
+
+

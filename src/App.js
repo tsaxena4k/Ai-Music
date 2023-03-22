@@ -6,6 +6,9 @@ import "./App.css";
 import axios from "axios";
 import getMusicByMood from "./middleware/getMusicByMood";
 import Player from "./Player";
+import Navbar from "./Component/Navbar";
+import Body from "./Component/Body";
+import WaveFooter from "./Component/WaveFooter";
 
 const spotifyApi = new SpotifyWebApi({
   clientId: "368dc6d7edeb44b8a0b85a6e3ff69c3c",
@@ -80,6 +83,9 @@ function App() {
         <button onClick={handleNext}>Next</button>
       </div>
       <Player/>
+      <Navbar />
+    <Body />
+    <WaveFooter/>
     </div>
   );
 }
