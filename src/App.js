@@ -5,6 +5,8 @@ import WebcamComponent from "./Component/WebcamComponent";
 import Navbar from "./Component/Navbar";
 import Body from "./Component/Body";
 import WaveFooter from "./Component/WaveFooter";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Player from "./Component/Player";
 
 const playlist = {
   happy: [newSound],
@@ -82,11 +84,28 @@ function App() {
   //   </div>
   // );
 
+  const router = createBrowserRouter([{
+    path: "/",
+    element: <><Navbar /> <Body /> <WaveFooter /> </>,
+    children: [
+      {
+        path: "/",
+        element: <WebcamComponent />
+      },
+      {
+        path: "/player",
+        element: <Player />
+      }
+    ]
+  }])
+
   return (<>
 
-    <Navbar />
+    {/* <Navbar />
     <Body />
-    <WaveFooter/>
+    <WaveFooter /> */}
+
+    <RouterProvider router={router} />
 
   </>)
 

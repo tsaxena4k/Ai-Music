@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Webcam from 'react-webcam';
 import { useState, useRef } from 'react';
 import '../assets/styles/WebcamComp.css'
+import { redirect, Navigate } from "react-router-dom"
+
 
 const WebcamComponent = () => {
     const webcamref = useRef(null)
     const ssimageref = useRef(null)
     const [ssImage, setSSImage] = useState(null);
+    const [gotoPlayer, setGotoPlayer] = useState(false);
 
     const handleCapture = () => {
 
@@ -21,8 +24,14 @@ const WebcamComponent = () => {
         setSSImage(webcamref.current.getScreenshot())
     }
 
+    if (gotoPlayer) {
+        return <Navigate to={"/player"} />
+    }
+
+
     return (
         <div className="wb-comp">
+
             <div className="left">
                 <div className='wb-container'>
                     <Webcam ref={webcamref} className="webcam" />
