@@ -1,7 +1,7 @@
 import { storage } from "./firebase/firebase";
 import React, { useState } from "react";
 
-function Player1({ message }) {
+function Player1({message}) {
   const allInputs = { imgUrl: "" };
   const [imageAsFile, setImageAsFile] = useState("");
   const [imageAsUrl, setImageAsUrl] = useState(allInputs);
