@@ -1,10 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "../assets/styles/Navbar.scss"
 
 const Navbar = () => {
   return (
     <div className='navbar'>
-        <h2 className="logo">AI-Music</h2>
+      <Link to={"/"}><h2 className="logo">AI-Music</h2></Link>
+        
         <ul className="navItems">
             <li className="navItem">About</li>
             <li className="navItem team">Team</li>
@@ -12,3 +14,5 @@ const Navbar = () => {
     </div>
   )
 }
+
+export default Navbar;

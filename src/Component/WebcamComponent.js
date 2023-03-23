@@ -2,10 +2,14 @@ import React from "react";
 import Webcam from "react-webcam";
 import { useState, useRef } from "react";
 import "../assets/styles/WebcamComp.scss";
-import Player from "../Player";
+import Player from "../Player1";
 import Shutter from "../assets/images/shutter.png";
 import { storage } from "../firebase/firebase";
+import { useDispatch } from 'react-redux'
+import { setCurrentMood } from "../utils/appSlice";
+import { Navigate } from "react-router-dom";
 import axios from "axios";
+import Loader from "./Loader";
 
 const WebcamComponent = () => {
   const webcamref = useRef(null);
@@ -13,6 +17,9 @@ const WebcamComponent = () => {
   const [cameraLoad, setCameraLoad] = useState(true);
   const [loader, setLoader] = useState(false);
   const [emotion, setEmotion] = useState(null);
+  const [goToPlayer,setGoToPlayer]=useState(false);
+
+  const dispatch=useDispatch();
 
   //capture and upload to firebase
   const handleCapture = async () => {
@@ -53,6 +60,8 @@ const WebcamComponent = () => {
         console.log(response.data[0]?.emotion?.value);
         setLoader(false);
         setEmotion(response.data[0]?.emotion?.value);
+        dispatch(setCurrentMood(response.data[0]?.emotion?.value))
+        setGoToPlayer(true);
       })
       .catch(function (error) {
         console.error(error);
@@ -60,7 +69,13 @@ const WebcamComponent = () => {
       });
   };
 
-  return (
+  if(goToPlayer){
+    return <Navigate to={"/player"} />
+  }
+
+  // return <Loader/>
+
+  return loader?<Loader/>: (
     <div className="wc-wrapper">
       <div className="row">
         <div className="col-sm-6 text-center d-flex justify-content-center">

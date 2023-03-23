@@ -5,6 +5,7 @@ import '../assets/styles/Player.css'
 import musicIcon from '../assets/img/music-icon.gif'
 import Slider from 'react-slick'
 import { FaPlayCircle } from 'react-icons/fa'
+import { useSelector } from 'react-redux'
 const Player = () => {
     var settings = {
         dots: false,
@@ -15,9 +16,11 @@ const Player = () => {
         arrows: false,
         autoplay: false
     };
+
+    const currentMood=useSelector((store)=>store.app.currentMood);
     return (
         <div className="playermain">
-            <h2 className="playermood">Current Mood : Happy!</h2>
+            <h2 className="playermood">Current Mood : {currentMood}</h2>
             <div className="playercontent">
                 <div className="left">
                     <h2 className="mood-quote">We couldn't be happier seeing you happy</h2>
