@@ -15,6 +15,7 @@
     "react-scripts": "5.0.1",
     "react-spotify-auth": "^1.4.3",
     "react-webcam": "^7.0.1",
+    "sass": "^1.59.3",
     "spotify-web-api-js": "^1.5.2",
     "web-vitals": "^2.1.4"
   },

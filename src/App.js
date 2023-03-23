@@ -62,7 +62,7 @@ function App() {
   console.log(playlist);
   return (
     <div className="App">
-      <h1>Music Mood Player</h1>
+      {/* <h1>Music Mood Player</h1>
       <form>
         <label>
           Select a mood:
@@ -81,8 +81,7 @@ function App() {
         <button onClick={handlePause}>Pause</button>
         <button onClick={handlePlay}>Play</button>
         <button onClick={handleNext}>Next</button>
-      </div>
-      <Player/>
+      </div> */}
       <Navbar />
     <Body />
     <WaveFooter/>
