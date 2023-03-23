@@ -14,10 +14,13 @@ import surpriseObject from "../data/surprise.json";
 import disgustObject from "../data/disgust.json";
 import neutralObject from "../data/neutral.json";
 
+import { useSelector } from 'react-redux'
 const Player = () => {
   const [mood, setMood] = useState("happy");
   const [playlist, setPlaylist] = useState([]);
   const [songIndex, setSongIndex] = useState(0);
+
+  const currentMood = useSelector((store)=>store.app.currentMood);
 
   useEffect(() => {
     if (mood == "happy") setPlaylist(happyObject);
@@ -82,7 +85,7 @@ const Player = () => {
   };
   return (
     <div className="playermain">
-      <h2 className="playermood">Current Mood : Happy!</h2>
+      <h2 className="playermood">Current Mood : {currentMood}</h2>
       <div className="playercontent">
         <div className="left">
           <h2 className="mood-quote">
