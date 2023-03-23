@@ -2,7 +2,7 @@ import React from "react";
 import Webcam from "react-webcam";
 import { useState, useRef } from "react";
 import "../assets/styles/WebcamComp.scss";
-import Player from "../Player";
+import Player from "../Player1";
 import Shutter from "../assets/images/shutter.png";
 import { storage } from "../firebase/firebase";
 import axios from "axios";

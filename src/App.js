@@ -5,7 +5,7 @@ import App1 from "./middleware/getMusicByMood";
 import "./App.css";
 import axios from "axios";
 import getMusicByMood from "./middleware/getMusicByMood";
-import Player from "./Player";
+import WebcamComponent from "./Component/WebcamComponent";
 import Navbar from "./Component/Navbar";
 import Body from "./Component/Body";
 import WaveFooter from "./Component/WaveFooter";
