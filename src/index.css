@@ -15,3 +15,8 @@ code {
 }
 
 
+a{
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
