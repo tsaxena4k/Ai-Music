@@ -11,7 +11,6 @@ import Body from "./Component/Body";
 import WaveFooter from "./Component/WaveFooter";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Player from "./Component/Player";
-import WebcamComponent from "./Component/WebcamComponent";
 import { Provider } from 'react-redux'
 import store from "./utils/store";
 

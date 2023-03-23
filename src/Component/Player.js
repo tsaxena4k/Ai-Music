@@ -20,6 +20,8 @@ const Player = () => {
   const [playlist, setPlaylist] = useState([]);
   const [songIndex, setSongIndex] = useState(0);
 
+  const currentMood = useSelector((store)=>store.app.currentMood);
+
   useEffect(() => {
     if (mood == "happy") setPlaylist(happyObject);
     if (mood == "angry") setPlaylist(angryObject);
@@ -83,7 +85,7 @@ const Player = () => {
   };
   return (
     <div className="playermain">
-      <h2 className="playermood">Current Mood : Happy!</h2>
+      <h2 className="playermood">Current Mood : {currentMood}</h2>
       <div className="playercontent">
         <div className="left">
           <h2 className="mood-quote">
