@@ -1,0 +1,32 @@
+.wc-wrapper {
+  margin-top: 5vw;
+  overflow: hidden;
+  .wc-container {
+    margin: 0 5vw;
+    max-width: 90vw;
+    position: relative;
+    .alert {
+      position: absolute;
+      top:1%;
+      width: 95%;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .webcam {
+      width: 100%;
+      max-height: auto;
+      border-radius: 10px;
+    }
+  }
+  .wc-heading {
+    h2 {
+      color: white;
+      font-size: 64px;
+    }
+  }
+  .wc-info {
+    font-size: 24px;
+  }
+}
