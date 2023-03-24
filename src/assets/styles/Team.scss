@@ -1,0 +1,46 @@
+$phonebreakpoint: 480px;
+
+.teammain{
+    width: 75%;
+    max-width: 1150px;
+    margin: 25px auto;
+    color: snow;
+
+    .heading{
+        font-weight: 300;
+    }
+
+    .teamlist{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .teamcard{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 250px;
+        padding: 10px;
+        flex-direction: column;
+        white-space: nowrap;
+
+        img{
+            width: 250px;
+            border-radius: 50%;
+        }
+    }
+}
+
+@media only screen and (max-width : $phonebreakpoint) {
+    .teammain{
+        .teamlist{
+            flex-direction: column;
+
+            .teamcard{
+                width: 100%;
+            }
+        }
+    }
+}

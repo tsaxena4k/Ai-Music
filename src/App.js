@@ -13,6 +13,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Player from "./Component/Player";
 import { Provider } from 'react-redux'
 import store from "./utils/store";
+import About from "./Component/About";
+import Team from "./Component/Team";
 
 const spotifyApi = new SpotifyWebApi({
   clientId: "368dc6d7edeb44b8a0b85a6e3ff69c3c",
@@ -98,6 +100,14 @@ function App() {
       {
         path: "/player",
         element: <Player />
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/team",
+        element: <Team />
       }
     ]
   }])
