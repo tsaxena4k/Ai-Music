@@ -13,6 +13,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Player from "./pages/Player";
 import { Provider } from "react-redux";
 import store from "./utils/store";
+import About from "./Component/About";
+import Team from "./Component/Team";
 
 const spotifyApi = new SpotifyWebApi({
   clientId: "368dc6d7edeb44b8a0b85a6e3ff69c3c",
@@ -20,34 +22,104 @@ const spotifyApi = new SpotifyWebApi({
 });
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <>
-          <Navbar /> <Body /> <WaveFooter />{" "}
-        </>
-      ),
-      children: [
-        {
-          path: "/",
-          element: <WebcamComponent />,
-        },
-        {
-          path: "/player",
-          element: <Player />,
-        },
-      ],
-    },
-  ]);
+  const [mood, setMood] = useState("happy");
+  const [playlist, setPlaylist] = useState([]);
+  const [songIndex, setSongIndex] = useState(0);
 
-  return (
-    <>
-      <Provider store={store}>
-        <RouterProvider router={router} />
-      </Provider>
-    </>
-  );
+  const sound = new Howl({
+    src: playlist[songIndex]?.song_uri,
+    html5: true,
+    onend: () => {
+      setSongIndex((prevIndex) =>
+        playlist.length == prevIndex + 1 ? 0 : prevIndex + 1
+      );
+    },
+  });
+
+  const handleMoodChange = async (event) => {
+    const mood = event.target.value;
+    setMood(mood);
+    const resposne = await getMusicByMood(mood);
+    setPlaylist(resposne);
+  };
+
+  const handlePlay = () => {
+    sound.stop();
+    sound.play();
+  };
+
+  const handlePause = () => {
+    sound.pause();
+  };
+
+  const handleNext = () => {
+    setSongIndex((prevIndex) =>
+      playlist.length == prevIndex + 1 ? 0 : prevIndex + 1
+    );
+    handlePlay();
+  };
+
+  const handlePrev = () => {
+    setSongIndex((prevIndex) =>
+      prevIndex === 0 ? playlist.length - 1 : prevIndex - 1
+    );
+    handlePlay();
+  };
+
+  // return (
+  //   <div>
+  //     <WebcamComponent/>
+  //     <h1>Music Mood Player</h1>
+  //     <form>
+  //       <label>
+  //         Select a mood:
+  //         <select value={mood} onChange={handleMoodChange}>
+  //           <option value="happy">Happy</option>
+  //           <option value="sad">Sad</option>
+  //           <option value="angry">Angry</option>
+  //         </select>
+  //       </label>
+  //     </form>
+  //     <div>
+  //       <button onClick={handlePrev}>Prev</button>
+  //       <button onClick={handlePause}>Pause</button>
+  //       <button onClick={handlePlay}>Play</button>
+  //       <button onClick={handleNext}>Next</button>
+  //     </div>
+  //   </div>
+  // );
+
+  const router = createBrowserRouter([{
+    path: "/",
+    element: <><Navbar /> <Body /> <WaveFooter /> </>,
+    children: [
+      {
+        path: "/",
+        element: <WebcamComponent />
+      },
+      {
+        path: "/player",
+        element: <Player />
+      },
+    {
+      path: "/about",
+      element: <About />
+    },
+    {
+      path: "/team",
+      element: <Team />
+    }
+    ]
+  }])
+
+  return (<>
+
+    <Provider store={store}>
+
+      <RouterProvider router={router} />
+    </Provider>
+  </>)
+
 }
 
 export default App;

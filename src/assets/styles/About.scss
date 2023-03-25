@@ -1,0 +1,55 @@
+$phonebreakpoint:480px;
+
+.aboutmain{
+    color: white;
+    width: 75%;
+    margin: 25px auto;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    max-width: 1150px;
+
+    .heading{
+        font-size: 42px;
+        font-weight: 400;
+    }
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    .tech-stack{
+        display: flex;
+        justify-content: center;
+
+
+        .tech-card{
+            width: 25%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            flex-direction: column;
+
+            .tech-logo{
+                height: 150px;
+            }
+        }
+    }
+}
+
+@media only screen and ( max-width: $phonebreakpoint ){
+    .aboutmain {
+
+        .tech-stack{
+            flex-direction: column;
+
+            .tech-card{
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
