@@ -33,7 +33,7 @@ const Team = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Team
+export default Team;

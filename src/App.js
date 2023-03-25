@@ -9,9 +9,9 @@ import WebcamComponent from "./Component/WebcamComponent";
 import Navbar from "./Component/Navbar";
 import Body from "./Component/Body";
 import WaveFooter from "./Component/WaveFooter";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Player from "./Component/Player";
-import { Provider } from 'react-redux'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Player from "./pages/Player";
+import { Provider } from "react-redux";
 import store from "./utils/store";
 import About from "./Component/About";
 import Team from "./Component/Team";
@@ -101,14 +101,14 @@ function App() {
         path: "/player",
         element: <Player />
       },
-      {
-        path: "/about",
-        element: <About />
-      },
-      {
-        path: "/team",
-        element: <Team />
-      }
+    {
+      path: "/about",
+      element: <About />
+    },
+    {
+      path: "/team",
+      element: <Team />
+    }
     ]
   }])
 
