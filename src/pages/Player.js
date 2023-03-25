@@ -4,7 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "../assets/styles/Player.scss";
 import { Howl, Howler } from "howler";
 import Slider from "react-slick";
-import { FaPlayCircle } from "react-icons/fa";
+import { FaPlayCircle, FaRegPlayCircle, FaRegPauseCircle } from "react-icons/fa";
+import { ImNext, ImPrevious } from "react-icons/im";
 import happyObject from "../data/happy.json";
 import angryObject from "../data/angry.json";
 import joyObject from "../data/joy.json";
@@ -17,8 +18,10 @@ import "react-slideshow-image/dist/styles.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import SongCard from "../Component/SongCard";
+import musicIcon from "../assets/images/music-icon.gif";
+
 const Player = () => {
-  const [mood, setMood] = useState("happiness");
+  const [mood, setMood] = useState("happy");
   const [playlist, setPlaylist] = useState([]);
   const [songIndex, setSongIndex] = useState(0);
   const [quote, setQuote] = useState("");
@@ -47,7 +50,7 @@ const Player = () => {
 
   useEffect(() => {
     axios
-      .get(`https://api.api-ninjas.com/v1/quotes?category=${mood}`, {
+      .get(`https://api.api-ninjas.com/v1/quotes?category=inspirational`, {
         headers: {
           "Content-Type": "application/json",
           "X-Api-Key": "CgybgPVlI6e/idtBmiTY3A==MUGB9hcHH7o2IRBV",
@@ -136,7 +139,9 @@ const Player = () => {
     <div className="playermain container">
       <div className="row">
         <div className="col-auto">
-          <h2 className="player-mood mb-5 mt-3">Current Mood : {currentMood}</h2>
+          <h2 className="player-mood mb-5 mt-3">
+            Current Mood : {currentMood}
+          </h2>
         </div>
       </div>
       <div className="row row-mobile-order">
@@ -191,31 +196,39 @@ const Player = () => {
           </div>
         </div>
       </div>
-      <div className="musicplayer">
-        <div className="row h-100">
-          <div className="col-4 d-flex align-items-center justify-content-center">
-            <img
-              src="https://www.freepnglogos.com/uploads/apple-music-logo-circle-png-28.png"
-              className="img-fluid"
-              width="60px"
-            />
+      <div className="musicplayer p-2">
+        <div className="row m-auto container justify-content-between align-items-center">
+          <div className="col-auto d-flex align-items-center justify-content-center">
+            <img src={musicIcon} className="img-fluid rounded" width="60px" />
             <div className="ms-4">
-              <h2 className="mb-0">{playlist[songIndex]?.song_name}</h2>
-              <p>by {playlist[songIndex]?.song_artist}</p>
+              <h3 className="mb-0">{playlist[songIndex]?.song_name}</h3>
+              <h6 className="mb-0">by {playlist[songIndex]?.song_artist}</h6>
             </div>
           </div>
-          <div className="col-8 text-center d-flex align-items-center justify-content-center">
-            <button className="btn btn-light btn-sm me-3" onClick={handlePrev}>
-              Previous
+          <div className="col-auto text-center d-flex align-items-center justify-content-center">
+            <button
+              className="btn btn-dark btn-sm me-3 fw-semibold rounded" style={{backgroundColor:"black",padding:"10px",boxShadow:"0px 0px 15px rgba(0,0,0,0.4)"}}
+              onClick={handlePrev}
+            >
+              <ImPrevious className="fs-3 text-light"/>
             </button>
-            <button className="btn btn-light btn-sm me-3" onClick={handlePlay}>
-              Play
+            <button
+              className="btn btn-dark btn-sm me-3 fw-semibold rounded" style={{backgroundColor:"black",padding:"10px",boxShadow:"0px 0px 15px rgba(0,0,0,0.4)"}}
+              onClick={handlePlay}
+            >
+              <FaRegPlayCircle className="fs-3 text-light"/>
             </button>
-            <button className="btn btn-light btn-sm me-3" onClick={handlePause}>
-              Pause
+            <button
+              className="btn btn-dark btn-sm me-3 fw-semibold rounded" style={{backgroundColor:"black",padding:"10px",boxShadow:"0px 0px 15px rgba(0,0,0,0.4)"}}
+              onClick={handlePause}
+            >
+              <FaRegPauseCircle className="fs-3 text-light"/>
             </button>
-            <button className="btn btn-light btn-sm me-3" onClick={handleNext}>
-              Next
+            <button
+              className="btn btn-dark btn-sm me-3 fw-semibold rounded" style={{backgroundColor:"black",padding:"10px",boxShadow:"0px 0px 15px rgba(0,0,0,0.4)"}}
+              onClick={handleNext}
+            >
+              <ImNext className="fs-3 text-light"/>
             </button>
           </div>
         </div>

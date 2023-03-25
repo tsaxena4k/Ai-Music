@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="navbar d-flex align-items-center">
       <Link to={"/"}>
-        <h2 className="logo">AI-Music</h2>
+        <h2 className="logo">MoodTunes</h2>
       </Link>
       <ul className="navItems mb-0">
         <li className="navItem">
