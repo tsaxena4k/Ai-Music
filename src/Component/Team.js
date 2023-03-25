@@ -1,10 +1,10 @@
 import React from 'react'
 import '../assets/styles/Team.scss'
-import rythm from '../assets/img/rythm.jpg'
-import tushar from '../assets/img/tushar.jpg'
-import meghna from '../assets/img/meghna.jpg'
-import rishab from '../assets/img/rishab.jpg'
-import rohan from '../assets/img/rohan.jpg'
+import rythm from '../assets/images/rythm.jpg'
+import tushar from '../assets/images/tushar.jpg'
+import meghna from '../assets/images/meghna.jpg'
+import rishab from '../assets/images/rishab.jpg'
+import rohan from '../assets/images/rohan.jpg'
 
 const Team = () => {
   return (
