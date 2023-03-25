@@ -1,42 +1,42 @@
 [
     {
-     "song_uri": "https://cdns-preview-7.dzcdn.net/stream/c-71862a55e62172a58302b8a2d771647f-4.mp3",
-     "song_name": "Can't Stop The Feeling!",
-     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/1000a7addd9b066996c4bf49aa6c428f/500x500-000000-80-0-0.jpg",
-     "song_emotion": "happy",
-     "song_artist": "Tyler Ward",
+     "song_uri": "https://cdns-preview-3.dzcdn.net/stream/c-3e3ce7334fffcfda4e7a3ef0e85a34e8-7.mp3",
+     "song_name": "Somewhere Over the Rainbow",
+     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/82eae07e8eda8a91ff1bcc0919807a71/500x500-000000-80-0-0.jpg",
+     "song_emotion": "neutral",
+     "song_artist": "Israel Kamakawiwo'ole",
      "id": "1"
     },
     {
-     "song_uri": "https://cdns-preview-6.dzcdn.net/stream/c-602c1d6a3c57c5ff2f0c74c7d1970a16-51.mp3",
-     "song_name": "I Gotta Feeling (Made Famous by Black Eyed Peas)",
-     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/60400775d7f897c3172daf599f694497/500x500-000000-80-0-0.jpg",
-     "song_emotion": "happy",
-     "song_artist": "Club DJs United",
+     "song_uri": "https://cdns-preview-5.dzcdn.net/stream/c-5503df16eade59c9031bab1d4152c09f-11.mp3",
+     "song_name": "Here Comes the Sun",
+     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/aa94ab293730bb7845d2aa8c672b2c29/500x500-000000-80-0-0.jpg",
+     "song_emotion": "neutral",
+     "song_artist": "The Beatles",
      "id": "2"
     },
     {
-     "song_uri": "https://cdns-preview-2.dzcdn.net/stream/c-24480907b39e15c1940234838e8dd432-7.mp3",
-     "song_name": "Walking On Sunshine",
-     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/39faab64c1a4b83431a0bd8b2d29bbd1/500x500-000000-80-0-0.jpg",
-     "song_emotion": "happy",
-     "song_artist": "Glee Club",
+     "song_uri": "https://cdns-preview-f.dzcdn.net/stream/c-f4d04fa22ff3cc680cad30eea149cc1d-6.mp3",
+     "song_name": "Perfect",
+     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/000a9228cecfcc7c2093d9cd7bb66447/500x500-000000-80-0-0.jpg",
+     "song_emotion": "neutral",
+     "song_artist": "Ed Sheeran",
      "id": "3"
     },
     {
-     "song_uri": "https://cdns-preview-9.dzcdn.net/stream/c-9582d10056f1ebc4ced5122caa27afad-9.mp3",
-     "song_name": "Good Vibrations",
-     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/33e96e15b43b87d795605c17d561b356/500x500-000000-80-0-0.jpg",
-     "song_emotion": "happy",
-     "song_artist": "The Beach Boys",
+     "song_uri": "https://cdns-preview-4.dzcdn.net/stream/c-47ef38759e486f8927e65552f8b5b3a6-7.mp3",
+     "song_name": "What a Wonderful World",
+     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/e3aed8bf9c571ff41e6ca9a89801b582/500x500-000000-80-0-0.jpg",
+     "song_emotion": "neutral",
+     "song_artist": "Louis Armstrong",
      "id": "4"
     },
     {
-     "song_uri": "https://cdns-preview-b.dzcdn.net/stream/c-b2db1f2ed3adefd679afdf3226e4f9c7-2.mp3",
-     "song_name": "Best Day Of My Life",
-     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/2d827558d540c4f506f121f437be4f87/500x500-000000-80-0-0.jpg",
-     "song_emotion": "happy",
-     "song_artist": "Tyler Ward & Cimorelli",
+     "song_uri": "https://cdns-preview-8.dzcdn.net/stream/c-8f53d201ef339215f9ce5e5b68ee611d-4.mp3",
+     "song_name": "Come Away With Me",
+     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/b08b6d2e396905fff79ab088364f19ef/500x500-000000-80-0-0.jpg",
+     "song_emotion": "neutral",
+     "song_artist": "Norah Jones",
      "id": "5"
     }
    ]

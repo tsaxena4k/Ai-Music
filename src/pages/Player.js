@@ -3,12 +3,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../assets/styles/Player.scss";
 import { Howl, Howler } from "howler";
-import Slider from "react-slick";
-import { FaPlayCircle, FaRegPlayCircle, FaRegPauseCircle } from "react-icons/fa";
+import {
+  FaPlayCircle,
+  FaRegPlayCircle,
+  FaRegPauseCircle,
+} from "react-icons/fa";
 import { ImNext, ImPrevious } from "react-icons/im";
 import happyObject from "../data/happy.json";
 import angryObject from "../data/angry.json";
-import joyObject from "../data/joy.json";
+import sadObject from "../data/sad.json";
 import fearObject from "../data/fear.json";
 import surpriseObject from "../data/surprise.json";
 import disgustObject from "../data/disgust.json";
@@ -21,32 +24,23 @@ import SongCard from "../Component/SongCard";
 import musicIcon from "../assets/images/music-icon.gif";
 
 const Player = () => {
-  const [mood, setMood] = useState("happy");
+  const [mood, setMood] = useState("sad");
   const [playlist, setPlaylist] = useState([]);
   const [songIndex, setSongIndex] = useState(0);
   const [quote, setQuote] = useState("");
   const [imgLoading, setImgLoading] = useState(true);
+  const [currentSong, setCurrentSong] = useState(null);
   const currentMood = useSelector((store) => store.app.currentMood);
 
   useEffect(() => {
-    if (mood == "happy") setPlaylist(happyObject);
-    if (mood == "angry") setPlaylist(angryObject);
-    if (mood == "fear") setPlaylist(fearObject);
-    if (mood == "surprise") setPlaylist(surpriseObject);
-    if (mood == "disgust") setPlaylist(disgustObject);
-    if (mood == "joy") setPlaylist(joyObject);
-    if (mood == "neutral") setPlaylist(neutralObject);
+    if (currentMood == "happy") setPlaylist(happyObject);
+    if (currentMood == "angry") setPlaylist(angryObject);
+    if (currentMood == "fear") setPlaylist(fearObject);
+    if (currentMood == "surprise") setPlaylist(surpriseObject);
+    if (currentMood == "disgust") setPlaylist(disgustObject);
+    if (currentMood == "sad") setPlaylist(sadObject);
+    if (currentMood == "neutral") setPlaylist(neutralObject);
   }, []);
-
-  const sound = new Howl({
-    src: playlist[songIndex]?.song_uri,
-    html5: true,
-    onend: () => {
-      setSongIndex((prevIndex) =>
-        playlist.length == prevIndex + 1 ? 0 : prevIndex + 1
-      );
-    },
-  });
 
   useEffect(() => {
     axios
@@ -63,45 +57,56 @@ const Player = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleMoodChange = async (event) => {
-    const mood = event.target.value;
-    setMood(mood);
-    const resposne = "happpy";
-    setPlaylist(resposne);
-  };
+  useEffect(() => {
+    if (playlist.length > 0) {
+      handlePlay(0);
+    }
+  }, [playlist]);
 
-  const handlePlay = () => {
-    sound.stop();
+  const handlePlay = (index) => {
+    if (currentSong) {
+      currentSong.unload();
+    }
+    setSongIndex(index);
+    const sound = new Howl({
+      src: playlist[index]?.song_uri,
+      html5: true,
+      onend: () => {
+        setSongIndex((prevIndex) =>
+          playlist.length == prevIndex + 1 ? 0 : prevIndex + 1
+        );
+        handlePlay();
+      },
+    });
+    setCurrentSong(sound);
     sound.play();
   };
 
   const handlePause = () => {
-    sound.pause();
+    currentSong.pause();
   };
 
   const handleNext = () => {
+    if (currentSong) {
+      currentSong.unload();
+    }
     setSongIndex((prevIndex) =>
       playlist.length == prevIndex + 1 ? 0 : prevIndex + 1
     );
-    handlePlay();
+
+    handlePlay(playlist.length == songIndex + 1 ? 0 : songIndex + 1);
   };
 
   const handlePrev = () => {
+    if (currentSong) {
+      currentSong.unload();
+    }
     setSongIndex((prevIndex) =>
       prevIndex === 0 ? playlist.length - 1 : prevIndex - 1
     );
-    handlePlay();
+    handlePlay(songIndex === 0 ? playlist.length - 1 : songIndex - 1);
   };
 
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: false,
-  };
   const fadeImages = [
     {
       url: "https://source.unsplash.com/random/500x600/?food",
@@ -122,25 +127,13 @@ const Player = () => {
       url: "https://source.unsplash.com/random/500x600/?pizza",
     },
   ];
-  const spanStyle = {
-    padding: "20px",
-    background: "#efefef",
-    color: "#000000",
-  };
 
-  const divStyle = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundSize: "cover",
-    height: "400px",
-  };
   return (
     <div className="playermain container">
       <div className="row">
         <div className="col-auto">
-          <h2 className="player-mood mb-5 mt-3">
-            Current Mood : {currentMood}
+          <h2 className="player-mood mb-5 mt-3 ">
+            Current Mood : <span className="text-uppercase">{currentMood}</span>
           </h2>
         </div>
       </div>
@@ -163,11 +156,20 @@ const Player = () => {
 
           <h4 className="mt-3">Enjoy the custom playlist made for you :</h4>
           <div className="playlist pe-sm-2">
-            <SongCard />
-            <SongCard />
-            <SongCard />
-            <SongCard />
-            <SongCard />
+            {playlist.map((song, index) => {
+              return (
+                index != songIndex && (
+                  <SongCard
+                    title={song?.song_name}
+                    artist={song?.song_artist}
+                    thumbnail={song?.song_thumbnail}
+                    setSongIndex={setSongIndex}
+                    index={index}
+                    handlePlay={handlePlay}
+                  />
+                )
+              );
+            })}
           </div>
         </div>
         <div className="col-sm-6 column-order1">
@@ -207,28 +209,48 @@ const Player = () => {
           </div>
           <div className="col-auto text-center d-flex align-items-center justify-content-center">
             <button
-              className="btn btn-dark btn-sm me-3 fw-semibold rounded" style={{backgroundColor:"black",padding:"10px",boxShadow:"0px 0px 15px rgba(0,0,0,0.4)"}}
+              className="btn btn-dark btn-sm me-3 fw-semibold rounded"
+              style={{
+                backgroundColor: "black",
+                padding: "10px",
+                boxShadow: "0px 0px 15px rgba(0,0,0,0.4)",
+              }}
               onClick={handlePrev}
             >
-              <ImPrevious className="fs-3 text-light"/>
+              <ImPrevious className="fs-3 text-light" />
             </button>
             <button
-              className="btn btn-dark btn-sm me-3 fw-semibold rounded" style={{backgroundColor:"black",padding:"10px",boxShadow:"0px 0px 15px rgba(0,0,0,0.4)"}}
-              onClick={handlePlay}
+              className="btn btn-dark btn-sm me-3 fw-semibold rounded"
+              style={{
+                backgroundColor: "black",
+                padding: "10px",
+                boxShadow: "0px 0px 15px rgba(0,0,0,0.4)",
+              }}
+              onClick={() => handlePlay(songIndex)}
             >
-              <FaRegPlayCircle className="fs-3 text-light"/>
+              <FaRegPlayCircle className="fs-3 text-light" />
             </button>
             <button
-              className="btn btn-dark btn-sm me-3 fw-semibold rounded" style={{backgroundColor:"black",padding:"10px",boxShadow:"0px 0px 15px rgba(0,0,0,0.4)"}}
+              className="btn btn-dark btn-sm me-3 fw-semibold rounded"
+              style={{
+                backgroundColor: "black",
+                padding: "10px",
+                boxShadow: "0px 0px 15px rgba(0,0,0,0.4)",
+              }}
               onClick={handlePause}
             >
-              <FaRegPauseCircle className="fs-3 text-light"/>
+              <FaRegPauseCircle className="fs-3 text-light" />
             </button>
             <button
-              className="btn btn-dark btn-sm me-3 fw-semibold rounded" style={{backgroundColor:"black",padding:"10px",boxShadow:"0px 0px 15px rgba(0,0,0,0.4)"}}
+              className="btn btn-dark btn-sm me-3 fw-semibold rounded"
+              style={{
+                backgroundColor: "black",
+                padding: "10px",
+                boxShadow: "0px 0px 15px rgba(0,0,0,0.4)",
+              }}
               onClick={handleNext}
             >
-              <ImNext className="fs-3 text-light"/>
+              <ImNext className="fs-3 text-light" />
             </button>
           </div>
         </div>

@@ -1,0 +1,42 @@
+[
+    {
+        "song_uri": "https://cdns-preview-7.dzcdn.net/stream/c-737eefbc710fc89681dec000170e0d25-7.mp3",
+        "song_name": "Don't Worry Be Happy",
+        "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/121ed33882c127248831b9aacfe5220b/500x500-000000-80-0-0.jpg",
+        "song_emotion": "sad",
+        "song_artist": "Bobby McFerrin",
+        "id": "1"
+    },
+    {
+        "song_uri": "https://cdns-preview-6.dzcdn.net/stream/c-6b8f35812cdd6a881fedd8d3aeb23ff1-7.mp3",
+        "song_name": "Walking on Sunshine",
+        "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/1a81bcd5543be9705c0c66e57593a258/500x500-000000-80-0-0.jpg",
+        "song_emotion": "sad",
+        "song_artist": "Katrina and The Waves",
+        "id": "2"
+    },
+    {
+        "song_uri": "https://cdns-preview-5.dzcdn.net/stream/c-5503df16eade59c9031bab1d4152c09f-11.mp3",
+        "song_name": "Here Comes The Sun",
+        "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/aa94ab293730bb7845d2aa8c672b2c29/500x500-000000-80-0-0.jpg",
+        "song_emotion": "sad",
+        "song_artist": "The Beatles",
+        "id": "3"
+    },
+    {
+        "song_uri": "https://cdns-preview-3.dzcdn.net/stream/c-37282aca2d9a4f99766a4eeed5be0b4b-6.mp3",
+        "song_name": "Three Little Birds",
+        "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/c43e3b1d83e0107dfff7e4238096fe5b/500x500-000000-80-0-0.jpg",
+        "song_emotion": "sad",
+        "song_artist": "Bob Marley & The Wailers",
+        "id": "4"
+    },
+    {
+        "song_uri": "https://cdns-preview-b.dzcdn.net/stream/c-ba7928a75f28351ebba21c2b7022d01c-6.mp3",
+        "song_name": "It's a Beautiful Day (Reprise)",
+        "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/47a596f8d2b396d73d8eb596c90d1b0f/500x500-000000-80-0-0.jpg",
+        "song_emotion": "sad",
+        "song_artist": "The Kiffness",
+        "id": "5"
+    }
+]

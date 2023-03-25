@@ -1,33 +1,33 @@
 [
     {
-     "song_uri": "https://cdns-preview-7.dzcdn.net/stream/c-71862a55e62172a58302b8a2d771647f-4.mp3",
-     "song_name": "Can't Stop The Feeling!",
-     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/1000a7addd9b066996c4bf49aa6c428f/500x500-000000-80-0-0.jpg",
-     "song_emotion": "happy",
-     "song_artist": "Tyler Ward",
+     "song_uri": "https://cdns-preview-1.dzcdn.net/stream/c-10457ff7a729df6d66df6f19ab135a4d-8.mp3",
+     "song_name": "Eye of the Tiger!",
+     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/e66b5d3a40f69690c1633afb73cc590c/500x500-000000-80-0-0.jpg",
+     "song_emotion": "disgust",
+     "song_artist": "Survivor",
      "id": "1"
     },
     {
-     "song_uri": "https://cdns-preview-6.dzcdn.net/stream/c-602c1d6a3c57c5ff2f0c74c7d1970a16-51.mp3",
-     "song_name": "I Gotta Feeling (Made Famous by Black Eyed Peas)",
-     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/60400775d7f897c3172daf599f694497/500x500-000000-80-0-0.jpg",
-     "song_emotion": "happy",
-     "song_artist": "Club DJs United",
+     "song_uri": "https://cdns-preview-8.dzcdn.net/stream/c-8e2950c9eaf0c5c9bd8621dc855099f4-7.mp3",
+     "song_name": "Can't Stop the Feeling!",
+     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/209aa560e3b5fbe679e91887fc0c7332/500x500-000000-80-0-0.jpg",
+     "song_emotion": "disgust",
+     "song_artist": "Justin Timberlake",
      "id": "2"
     },
     {
-     "song_uri": "https://cdns-preview-2.dzcdn.net/stream/c-24480907b39e15c1940234838e8dd432-7.mp3",
-     "song_name": "Walking On Sunshine",
-     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/39faab64c1a4b83431a0bd8b2d29bbd1/500x500-000000-80-0-0.jpg",
-     "song_emotion": "happy",
-     "song_artist": "Glee Club",
+     "song_uri": "https://cdns-preview-0.dzcdn.net/stream/c-0a92e8eee631bd405bde7c396e981abf-4.mp3",
+     "song_name": "Good Vibrations",
+     "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/ab113555b056cb808b050dff43a9590a/500x500-000000-80-0-0.jpg",
+     "song_emotion": "disgust",
+     "song_artist": "The Beach Boys",
      "id": "3"
     },
     {
      "song_uri": "https://cdns-preview-9.dzcdn.net/stream/c-9582d10056f1ebc4ced5122caa27afad-9.mp3",
      "song_name": "Good Vibrations",
      "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/33e96e15b43b87d795605c17d561b356/500x500-000000-80-0-0.jpg",
-     "song_emotion": "happy",
+     "song_emotion": "disgust",
      "song_artist": "The Beach Boys",
      "id": "4"
     },
@@ -35,7 +35,7 @@
      "song_uri": "https://cdns-preview-b.dzcdn.net/stream/c-b2db1f2ed3adefd679afdf3226e4f9c7-2.mp3",
      "song_name": "Best Day Of My Life",
      "song_thumbnail": "https://e-cdns-images.dzcdn.net/images/cover/2d827558d540c4f506f121f437be4f87/500x500-000000-80-0-0.jpg",
-     "song_emotion": "happy",
+     "song_emotion": "disgust",
      "song_artist": "Tyler Ward & Cimorelli",
      "id": "5"
     }
